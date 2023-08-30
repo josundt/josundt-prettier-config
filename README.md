@@ -7,9 +7,9 @@ Standard configuration for Prettier code-style formatter
 1. Make sure your project has an `.editorconfig` file, defining `indent_width`, `indent_style` etc. since
    prettier will use some of these settings to format source code accordingly.
 
-2. Install this package
+2. Install this package as a dev dependency
     ```bash
-    npm install @josundt/prettier-config
+    npm install -D -E @josundt/prettier-config
     ```
 
 3. Create a `.prettierrc` file in the root directory of your project with the following content:
@@ -25,7 +25,7 @@ Standard configuration for Prettier code-style formatter
         "scripts": {
             // ...
             "format": "npm run format:html && npm run format:style && npm run format:ts",
-            "format:ts": "prettier --config .prettierrc src/**/*.ts --write",
+            "format:ts": "prettier --config .prettierrc src/**/*.ts test/**/*.ts --write",
             "format:style": "prettier --config .prettierrc src/**/*.{css,scss} --write",
             "format:html": "prettier --config .prettierrc src/**/*.{html,ejs} --write",
             // ...
